@@ -190,6 +190,8 @@ namespace octomath {
     std::istream& readBinary(std::istream &s);
     std::ostream& writeBinary(std::ostream &s) const;
 
+    float *get_data() const {return const_cast<float*>(data);}
+
   protected:
     float data[4];
 

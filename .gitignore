@@ -27,3 +27,6 @@ Makefile
 *.bt
 *.ot
 *.graph
+
+.vscode
+*.so
