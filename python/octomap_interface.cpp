@@ -69,7 +69,13 @@ PYBIND11_MODULE(pyoctomap, m)
         .def("trans", [](octomath::Pose6D *self)
              { return self->trans(); })
         .def("rot", [](octomath::Pose6D *self)
-             { return self->rot(); });
+             { return self->rot(); })
+        .def("inv", [](octomath::Pose6D *self) {
+            return self->inv();
+        })
+        .def("compose", [](octomath::Pose6D *self, octomath::Pose6D other) {
+            return *self * other;
+        });
 
     py::class_<octomap::Pointcloud>(m, "Pointcloud", py::buffer_protocol())
         .def(py::init([](py::array_t<float> b) {

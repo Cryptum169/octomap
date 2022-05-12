@@ -24,7 +24,7 @@ for idx in range(len(poses)):
     tree.insertPointCloud(pcd, pose)
 
 pcd = tree.getPoints().numpy()
-# np.savetxt("run0.txt", pcd)
+np.savetxt("run0.txt", pcd)
 
 import pyvista as pv
 
