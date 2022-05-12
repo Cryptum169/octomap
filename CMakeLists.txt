@@ -4,9 +4,11 @@ PROJECT( octomap-distribution )
 ENABLE_TESTING()  # enable CTest environment of subprojects
 set(CMAKE_POSITION_INDEPENDENT_CODE ON)  # enables -fPIC in applicable compilers (required to avoid link errors in some cases)
 
-option(BUILD_OCTOVIS_SUBPROJECT "Build targets from subproject octovis" ON)
+option(BUILD_OCTOVIS_SUBPROJECT "Build targets from subproject octovis" OFF)
 option(BUILD_DYNAMICETD3D_SUBPROJECT  "Build targets from subproject dynamicEDT3D" ON)
 option(OCTOVIS_QT5 "Link Octovis against Qt5?" ON)
+option(BUILD_PYTHON_INTERFACE "Build Octomap Python interface?" ON)
+
 
 if(OCTOVIS_QT5)
 	# Compiling against QT5 requires C++11.
@@ -23,4 +25,6 @@ if(BUILD_DYNAMICETD3D_SUBPROJECT)
 	ADD_SUBDIRECTORY( dynamicEDT3D )
 endif()		
 
-
+if (BUILD_PYTHON_INTERFACE)
+	add_subdirectory(python)
+endif()
