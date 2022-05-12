@@ -1,3 +1,7 @@
+## Pybind Branch
+
+A very primitive pybind version for octomap. 
+
 OctoMap - An Efficient Probabilistic 3D Mapping Framework Based on Octrees.
 ===========================================================================
 
